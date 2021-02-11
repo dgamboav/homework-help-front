@@ -1,23 +1,18 @@
-import HomeComponent from "./components/home/HomeComponent";
-import { Button } from 'antd';
+import { Col, Row, Typography } from 'antd';
 
 // Styles
 import './styles/styles.less';
 
+
+const { Title } = Typography;
 function App() {
   return (
     <div>
-      <header>
-        <p>
-          Esto <code>src/App.js</code> and save to reload.
-        </p>
-
-        <Button type="primary">Button</Button>
-
-
-        <HomeComponent></HomeComponent>
-
-      </header>
+      <Row justify={'center'}>
+        <Col span={24}>
+          <Title level={1} style={{ textAlign: 'center'}}>Homework Help</Title>
+        </Col>
+      </Row>
     </div>
   );
 }

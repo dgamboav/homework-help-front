@@ -17,9 +17,9 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
+    "start": "env-cmd -f .env.development craco start",
+    "build:dev": "env-cmd -f .env.development craco build",
+    "test:dev": "env-cmd -f .env.development craco test"
   },
   "eslintConfig": {
     "extends": [
