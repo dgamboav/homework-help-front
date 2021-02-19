@@ -37,6 +37,9 @@ const AppStyles = (theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  avatar: {
+    margin: theme.spacing(0, 1),
+  }
 });
 
 export default AppStyles;
