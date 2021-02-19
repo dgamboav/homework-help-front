@@ -1,11 +1,9 @@
 import React from 'react'
 
 const SimpleLayout = ({children}) => {
-  return (
-    <div>
-      <main>{children}</main>
-    </div>
-  )
+    return (
+        <main>{children}</main>
+    )
 }
 
 export default SimpleLayout
