@@ -12,6 +12,7 @@ import LoginView from '../views/auth/login/LoginView';
 // Layouts
 import MainLayout from '../layouts/MainLayout';
 import SimpleLayout from '../layouts/SimpleLayout';
+import TeacherProfileView from '../views/teacher/profile/ProfileView';
 
 const Router = () => {
   return (
@@ -22,6 +23,8 @@ const Router = () => {
       <AppRoute exact path="/" component={HomeView} layout={MainLayout} />
       <AppRoute exact path="/students" component={StudentsDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teachers" component={TeachersDashboardView} layout={MainLayout} />
+      <AppRoute exact path="/teacher/profile" component={TeacherProfileView} layout={MainLayout} />
+
       {/* <Route component={Error404} /> */}
     </Switch>
   );
