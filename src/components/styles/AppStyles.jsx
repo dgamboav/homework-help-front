@@ -3,6 +3,7 @@ const AppStyles = (theme) => ({
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
+    backgroundColor: theme.palette.background.paper,
   },
   content: {
     backgroundColor: theme.palette.background.paper,
@@ -20,8 +21,8 @@ const AppStyles = (theme) => ({
   footer: {
     padding: theme.spacing(3, 2),
     marginTop: 'auto',
-    backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
+    // backgroundColor: theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
+    // background: theme.palette.primary.main,
   },
   card: {
     boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
@@ -30,6 +31,9 @@ const AppStyles = (theme) => ({
     '&:last-child': {
       paddingBottom: 14,
     },
+  },
+  cardHeader: {
+    marginLeft: '0px !important',
   },
   justifyFlex: {
     display: 'flex',

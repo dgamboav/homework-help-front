@@ -21,7 +21,7 @@ const MainLayout = (props) => {
       <CssBaseline />
       <Header title={title} />
       <main className={classes.content}>
-        <Container maxWidth="xl" className={classes.container}>
+        <Container maxWidth="xl"  className={classes.container}>
           {children}
         </Container>
       </main>
