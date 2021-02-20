@@ -12,7 +12,8 @@ import LoginView from '../views/auth/login/LoginView';
 // Layouts
 import MainLayout from '../layouts/MainLayout';
 import SimpleLayout from '../layouts/SimpleLayout';
-import TeacherProfileView from '../views/teacher/profile/ProfileView';
+import TeacherProfileView from '../views/teacher/ProfileView';
+import ScheduleView from '../views/teacher/ScheduleView';
 
 const Router = () => {
   return (
@@ -24,6 +25,8 @@ const Router = () => {
       <AppRoute exact path="/students" component={StudentsDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teachers" component={TeachersDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teacher/profile" component={TeacherProfileView} layout={MainLayout} />
+      <AppRoute exact path="/teacher/schedule" component={ScheduleView} layout={MainLayout} />
+
 
       {/* <Route component={Error404} /> */}
     </Switch>
