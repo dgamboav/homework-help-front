@@ -1,43 +1,181 @@
 import React, { useState } from 'react';
-import { Box, Button, Grid, Typography } from '@material-ui/core';
+import { Avatar, Box, Button, Chip, Grid, InputAdornment, List, ListItem, ListItemAvatar, ListItemText, makeStyles, TextField, Typography } from '@material-ui/core';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import InfoComonent from './components/InfoComponent';
 import { Link as LinkRouter } from 'react-router-dom';
+import { AccountCircle, AlternateEmail, LocationCity, PhoneAndroid } from '@material-ui/icons';
+
+
+const useStyles = makeStyles((theme) => ({
+    chip: {
+        margin: '2px'
+    },
+  }));
 
 const ProfileView = () => {
-    const [name] = useState("Juan Perez")
-    const [subject] = useState("Algebra")
-    const [rating] = useState(3)
-    const [students] = useState(125)
+    const classes = useStyles();
+
+    const [info] = useState({
+        name: "Juan Perez",
+        subjects: ["Ingles", "Algebra", "Ciencias", "Frances", "Musica", "Arte"],
+        rating: 3,
+        students: 125,
+        academicTraining: [
+            {
+             tittle: "Licenciatura en Matematica",
+             institution: "Universidad Autonoma de Panama - UAP",
+             expeditionDate: 2005   
+            }
+        ]
+    })
+
+    const listSubjects = info.subjects.map((val, i) =>
+        <Box key={i} display="inline" className={classes.chip}>
+            <Chip
+                label={val}
+                variant="outlined" 
+                color="primary" 
+                avatar={<Avatar>{val[0]}</Avatar>} 
+            />
+        </Box>
+    );
 
     return ( 
         <>
-            <Grid container>
+            <Grid container spacing={2}>
                 <Grid item xs={12}>
-                    <InfoComonent name={name} subject={subject} rating={rating} students={students} />
+                    <InfoComonent name={info.name} rating={info.rating} students={info.students} />
                 </Grid>
 
-                <Box m={2}>
-                    <Typography variant="body2" align="justify">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque consequuntur, non iure, omnis pariatur enim excepturi adipisci voluptate asperiores natus sequi eos dolorem veniam! Dolore distinctio mollitia veritatis dolorum?
-                    </Typography>
-                </Box>
+                <Grid item xs={12}>
 
-                <Grid container item display="flex" xs={12} justify="center" >
-                    <Box m={2}>
-                        
-                        <Button
-                            component={LinkRouter}
-                            to="/teacher/schedule"
-                            variant="contained"
-                            color="primary"
-                            startIcon={<EventNoteIcon />}
-                        >
-                            Agendar
-                        </Button>
-                        
+                    <Box display="flex" justifyContent="center">
+                        <Typography variant="subtitle1">Materias Impartidas</Typography>
                     </Box>
+
+                    <Box display="flex" justifyContent="center" flexWrap="wrap">
+                        {listSubjects}
+                    </Box>
+                    
                 </Grid>
+
+                <Grid item xs={12}>
+                    <Box display="flex" justifyContent="center">
+                        <Typography variant="subtitle1">Formación Académica</Typography>
+                    </Box>
+
+                    <List>
+                        <Grid container>
+                            <Grid item xs={12} md={6}>
+                                <ListItem>
+                                    <ListItemAvatar>
+                                        <Avatar alt="Test"></Avatar>
+                                    </ListItemAvatar>
+
+                                    <ListItemText 
+                                        primary={info.academicTraining[0].tittle}
+                                        secondary={
+                                            <>
+                                                <Typography
+                                                    component="span"
+                                                    variant="body2"
+                                                    color="textPrimary"
+                                                >
+                                                    {info.academicTraining[0].institution}
+                                                </Typography>
+                                                -   {info.academicTraining[0].expeditionDate}
+                                            </>
+                                        }
+                                    />
+                                </ListItem>
+                            </Grid>
+
+                            <Grid item xs={12} md={6}>
+                                <ListItem>
+                                    <ListItemAvatar>
+                                        <Avatar alt="Test"></Avatar>
+                                    </ListItemAvatar>
+
+                                    <ListItemText 
+                                        primary={info.academicTraining[0].tittle}
+                                        secondary={
+                                            <>
+                                                <Typography
+                                                    component="span"
+                                                    variant="body2"
+                                                    color="textPrimary"
+                                                >
+                                                    {info.academicTraining[0].institution}
+                                                </Typography>
+                                                -   {info.academicTraining[0].expeditionDate}
+                                            </>
+                                        }
+                                    />
+                                </ListItem>
+                            </Grid>
+                        </Grid>
+                    </List>
+                    
+                </Grid>
+
+                {/* <form noValidate autoComplete="off" style={ { padding: '1rem' , width: '100%' } }> */}
+                    <Grid item xs={12} md={6}>
+                        <TextField 
+                            multiline 
+                            rows={1} 
+                            rowsMax={2} 
+                            fullWidth 
+                            label="Dirección" 
+                            defaultValue="Calle 1, edificio Santa Lucia, Dep 37-06 " 
+                            InputProps={
+                                {
+                                    readOnly:true,
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <LocationCity />
+                                        </InputAdornment>
+                                    ),
+                                }
+                            }
+                        />
+                    </Grid>
+
+                    <Grid item xs={12} md={6}>
+                        <TextField
+                            label="Teléfono"
+                            fullWidth
+                            defaultValue="(424) 529 4781"
+                            InputProps={
+                                {
+                                    readOnly:true,
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <PhoneAndroid />
+                                        </InputAdornment>
+                                    ),
+                                }
+                            }
+                        />
+                    </Grid>
+
+                    <Grid item xs={12} md={6}>
+                        <TextField
+                            label="Correo"
+                            fullWidth
+                            defaultValue="juanperez@gmail.com"
+                            InputProps={
+                                {
+                                    readOnly:true,
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <AlternateEmail />
+                                        </InputAdornment>
+                                    ),
+                                }
+                            }
+                        />
+                    </Grid>
+                {/* </form> */}
 
             </Grid>
         </>

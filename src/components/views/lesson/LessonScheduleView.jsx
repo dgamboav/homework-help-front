@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Button,  Grid } from '@material-ui/core';
-import InfoComonent from './components/InfoComponent';
 import DatePicker from '../../common/DatePicker';
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+import {default as TeacherInfoComponent} from '../teacher/components/InfoComponent';
 
-const ScheduleView = () => {
+const LessonScheduleView = () => {
 
     const [times] = useState([
         '10:30 AM',
@@ -25,7 +25,7 @@ const ScheduleView = () => {
         <div>
             <Grid container>
                 <Grid item xs={12}>
-                    <InfoComonent name="Juan Perez" subject="Algebra" />
+                    <TeacherInfoComponent name="Juan Perez" subject="Algebra" />
                 </Grid>
 
                 <Grid container item xs={12} display="flex" justify="center">
@@ -40,4 +40,4 @@ const ScheduleView = () => {
      );
 }
  
-export default ScheduleView;
+export default LessonScheduleView;

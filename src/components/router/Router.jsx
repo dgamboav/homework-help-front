@@ -2,18 +2,19 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 import AppRoute from './AppRoute';
 
+// Layouts
+import MainLayout from '../layouts/MainLayout';
+import SimpleLayout from '../layouts/SimpleLayout';
+
 // Pages
 import HomeView from '../views/home/HomeView';
 import StudentsDashboardView from '../views/student/StudentsDashboardView';
 import TeachersDashboardView from '../views/teacher/TeachersDashboardView';
 import RegisterView from '../views/auth/register/RegisterView';
 import LoginView from '../views/auth/login/LoginView';
-
-// Layouts
-import MainLayout from '../layouts/MainLayout';
-import SimpleLayout from '../layouts/SimpleLayout';
 import TeacherProfileView from '../views/teacher/ProfileView';
-import ScheduleView from '../views/teacher/ScheduleView';
+import LessonScheduleView from '../views/lesson/LessonScheduleView';
+import LessonDetailView from '../views/lesson/LessonDetailView';
 
 const Router = () => {
   return (
@@ -25,8 +26,8 @@ const Router = () => {
       <AppRoute exact path="/students" component={StudentsDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teachers" component={TeachersDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teacher/profile" component={TeacherProfileView} layout={MainLayout} />
-      <AppRoute exact path="/teacher/schedule" component={ScheduleView} layout={MainLayout} />
-
+      <AppRoute exact path="/teacher/lesson/schedule" component={LessonScheduleView} layout={MainLayout} />
+      <AppRoute exact path="/teacher/lesson" component={LessonDetailView} layout={MainLayout} />
 
       {/* <Route component={Error404} /> */}
     </Switch>
