@@ -16,12 +16,13 @@ const MainLayout = (props) => {
     classes,
     title,
   } = props;
+
   return (
     <div className={classes.root}>
       <CssBaseline />
       <Header title={title} />
       <main className={classes.content}>
-        <Container maxWidth="xl"  className={classes.container}>
+        <Container maxWidth="xl">
           {children}
         </Container>
       </main>

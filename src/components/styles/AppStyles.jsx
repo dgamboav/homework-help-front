@@ -10,6 +10,17 @@ const AppStyles = (theme) => ({
   appBar: {
     color: theme.palette.primary.main
   },
+  logo: {
+    width: theme.spacing(10),
+    height: theme.spacing(10),
+    backgroundColor: '#fff',
+    position: 'relative',
+    top: 20,
+  },
+  buttonRounded: {
+    borderRadius: 30,
+    textTransform: 'none',
+  },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
