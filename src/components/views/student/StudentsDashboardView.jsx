@@ -3,63 +3,76 @@ import { Link as RouterLink } from 'react-router-dom';
 import {
   Grid,
   LinearProgress,
-  Button,
-  Link
+  Link,
+  Typography,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import {
-  PhotoCamera,
+  Face,
+  AccessAlarm,
+  Equalizer,
+  // SwapVerticalCircle,
+  // Exposure,
 } from '@material-ui/icons';
 import AppStyles from '../../styles/AppStyles';
 import InfoCard from '../../common/InfoCard';
-import StatsCard from '../../common/StatsCard';
-
-
 const StudentsDashboardView = (props) => {
   const { classes } = props;
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} sm={12} md={6}>
+      <Grid item xs={12}>
+        <Typography variant="body1">Próxima clase</Typography>
+      </Grid>
+      <Grid item xs={12} sm={12}>
         <InfoCard 
-          title="Next class"
+          title="Proxima Clase"
           subtitle="20:00h"
-          icon={<PhotoCamera />}
+          icon={<AccessAlarm />}
           iconPosition="left"
-          // content={<LinearProgress />}
+          content={<LinearProgress value={50} variant="determinate" />}
         />
       </Grid>
-      <Grid item xs={12} sm={12} md={6}>
+      <Grid item xs={6}>
         <Link component={RouterLink} to="/teachers" underline="none">
           <InfoCard 
-            title="Next class"
-            subtitle="20:00h"
-            icon={<PhotoCamera />}
+            icon={<Face />}
             iconPosition="right"
+            // title="First class"
+            subtitle={<b>Buscar Clases</b>}
           />
         </Link>
       </Grid>
       <Grid item xs={6}>
-        <InfoCard 
-          title="First class"
-          subtitle="09:00h"
-        />
+        <Link component={RouterLink} to="/teachers/lessons/list" underline="none">
+          <InfoCard 
+            icon={<AccessAlarm />}
+            iconPosition="right"
+            // title="Next class"
+            subtitle={<b>Clases Agendadas</b>}
+          />
+        </Link>
       </Grid>
       <Grid item xs={6}>
-        <InfoCard 
-          title="Next class"
-          subtitle="12:00h"
-        />
+        <Link component={RouterLink} to="/teachers" underline="none">
+          <InfoCard 
+            icon={<Equalizer />}
+            iconPosition="right"
+            // title="Next class"
+            subtitle={<b>Instituciones</b>}
+          />
+        </Link>
       </Grid>
-      <Grid item xs={12} sm={12} md={6}>
-        <StatsCard
-          title="Module name"
-          subtitle="Mudule subtitle"
-          icon={(<PhotoCamera />)}
-          headerAction
-          actions={(<Button component={RouterLink} to="/">Show more...</Button>)}
-        />
-      </Grid>
+      {/* <Grid item xs={6}>
+        <Link component={RouterLink} to="/teachers" underline="none">
+          <InfoCard 
+            icon={<PhotoCamera />}
+            iconPosition="right"
+            // title="Next class"
+            subtitle={<b>Chemestry</b>}
+          />
+        </Link>
+      </Grid> */}
     </Grid>
   )
 };

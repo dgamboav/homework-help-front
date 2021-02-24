@@ -5,11 +5,10 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  // Container,
-  // Link,
+  InputBase,
+  Box,
 } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import { Menu, Search, Notifications } from '@material-ui/icons';
 import AppStyles from '../../styles/AppStyles';
 
 
@@ -18,16 +17,34 @@ const Header = (props) => {
 
   return (
     <header>
-      <AppBar color="primary">
+      <AppBar color="default" className={classes.appBar}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+            <Menu />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             {title}
           </Typography>
+          <Box display="flex" flexDirection="row" justifyContent="center" width="100%">
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <Search />
+              </div>
+              <InputBase
+                placeholder="Buscar..."
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ 'aria-label': 'search' }}
+              />
+              {/* <div>
+                <Search />
+              </div> */}
+            </div>
+          </Box>
           <IconButton edge="end" color="inherit" aria-label="menu">
-            <NotificationsIcon />
+            <Notifications />
           </IconButton>
         </Toolbar>
       </AppBar>
