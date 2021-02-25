@@ -6,18 +6,11 @@ import Typography from "@material-ui/core/Typography";
 import {makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import MoreIcon from "@material-ui/icons/MoreVert";
 import Button from "@material-ui/core/Button";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { green, purple } from "@material-ui/core/colors";
 import TextField from "@material-ui/core/TextField";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -174,7 +167,7 @@ export default function ProminentAppBar() {
 
         <br />
         <Button color="primary" variant="contained" fullWidth>
-          Registrarse
+          R
         </Button>
 
         <Grid container spacing={8}>

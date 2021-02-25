@@ -1,130 +1,90 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import {Avatar, Box, makeStyles} from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import Button from '@material-ui/core/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { green, purple } from '@material-ui/core/colors';
-import TextField from '@material-ui/core/TextField'
-
-
-
-
-
-
-
-
+import React from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
+
   toolbar: {
     minHeight: 75,
-    alignItems: 'flex-start',
+    alignItems: "flex-start",
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(2),
   },
-  title: {
-    display: 'flex',
-    flexGrow: 5,
-    alignSelf: 'center',
-    paddingTop: 30,
-    paddingLeft: 50,
-    fontWeight: 'bolder',
-  },
-  /*logo Principal*/
-  logo:{
-    minHeight: 300,
-    alignItems: 'flex-center',
-    paddingTop: 1,
-    marginLeft: 500,
-    paddingBottom: 52,
-  },
-
-  /* Botones */
-  boton1: {
-    marginRight:10,
-    marginLeft: 20,
-  },
-  /*terminos y condiciones */
-  terminos: {
-    marginLeft: 50,
-  },
-
-  /*ya tienes cuenta */
-  cuenta: {
-    marginLeft: 100,
-  },
-
-  /* Boton de inicio de sesion */
-  iniciosesion: {
-    marginLeft: 110,
-  }
-  
-  
-
 }));
+
+
 
 export default function ProminentAppBar() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-
-        {/* Linea de header  */}
-      <AppBar position="static"> 
-        <Toolbar className={classes.toolbar}>
-          
-          
-          
-          
-        </Toolbar>
+      {/* Linea de header  */}
+      <AppBar position="static">
+        <Toolbar className={classes.toolbar}></Toolbar>
       </AppBar>
 
-       {/*<img className={classes.logo} src={Logo}/>*/}
+      <CssBaseline />
+      <Container maxWidth="xs">
+        <Grid container spacing={2}>
+          <Grid item xs={7}></Grid>
+        </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Typography align="center" variant="h4" style={{ paddingTop: 50, paddingBottom: 50 }}>
+              ¿Cual es tu Nivel de estudio?
+            </Typography>
+          </Grid>
+          
+              <Button variant="contained" color="primary" fullWidth  >
+                <Typography variant="body1" color="initial" style={{textTransform:'none'}} >
+                Basico
+                </Typography>
+                
+              </Button>
+              <Button variant="contained" color="primary" fullWidth style={{marginTop: 12}} >
+              <Typography variant="body1" color="initial" style={{textTransform:'none'}} >
+                Bachillerato
+                </Typography>
+                
+              </Button>
 
-      <Typography className={classes.title} variant="h5" noWrap>
-            Registrate con tu e-mail
-          </Typography>
+              <Button variant="contained" color="primary" fullWidth style={{marginTop: 12}} >
+              <Typography variant="body1" color="initial" style={{textTransform:'none'}} >
+                Tecnico Superior
+                </Typography>
+                
+              </Button>
 
-         
-        <br/> <br/>
-      <Button 
-      color="primary"
-      className={classes.boton1}
-      variant='contained'
-      >
-        Soy Profesor
-      </Button>
+              <Button variant="contained" color="primary" fullWidth style={{marginTop: 15}} >
+              <Typography variant="body1" color="initial" style={{textTransform:'none'}} >
+                Universitario
+                </Typography>
+                
+              </Button>
 
-        
-
-      <Button 
-      color="primary"
-      variant='contained'
-      className= "">
-
-        Soy Estudiante
-      </Button>
-
-     
-
-
+              <Button variant="contained" color="primary" fullWidth style={{marginTop: 15}} >
+              <Typography variant="body1" color="initial" style={{textTransform:'none'}} >
+                Maestria
+                </Typography>
+                
+              </Button>
+             
+           
+        </Grid>
+      </Container>
     </div>
-
-    
-
-    
-    
   );
 }
