@@ -33,16 +33,20 @@ const InfoCard = (props) => {
             marginLeft={(iconPosition === 'left') ? '1rem' : 0}
             marginRight={(iconPosition === 'right') ? '1rem' : 0}  
           >
-            <Typography variant="h4" noWrap>
-              {title}
-            </Typography>
-            {subtitle && (
-              <Typography variant="body2" noWrap>
-                {subtitle}
-              </Typography>
-            )}
+            <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center">
+              {title && (
+                <Typography variant="h5" noWrap>
+                  {title}
+                </Typography>
+              )}
+              {subtitle && (
+                <Typography variant="body2" color="primary" noWrap>
+                  {subtitle}
+                </Typography>
+              )}
+            </Box>
             {content && (
-              <Box>
+              <Box marginTop=".5rem">
                 {content}
               </Box>
             )}

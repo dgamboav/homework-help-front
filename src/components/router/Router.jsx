@@ -15,6 +15,7 @@ import LoginView from '../views/auth/login/LoginView';
 import TeacherProfileView from '../views/teacher/ProfileView';
 import LessonScheduleView from '../views/lesson/LessonScheduleView';
 import LessonDetailView from '../views/lesson/LessonDetailView';
+import LessonListView from '../views/lesson/LessonListView';
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
       <AppRoute exact path="/" component={HomeView} layout={MainLayout} />
       <AppRoute exact path="/students" component={StudentsDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teachers" component={TeachersDashboardView} layout={MainLayout} />
+      <AppRoute exact path="/teachers/lessons/list" component={LessonListView} layout={MainLayout} />
       <AppRoute exact path="/teacher/profile" component={TeacherProfileView} layout={MainLayout} />
       <AppRoute exact path="/teacher/lesson/schedule" component={LessonScheduleView} layout={MainLayout} />
       <AppRoute exact path="/teacher/lesson" component={LessonDetailView} layout={MainLayout} />
