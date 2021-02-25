@@ -3,7 +3,7 @@ import { Avatar, Box, Button, Chip, Grid, InputAdornment, List, ListItem, ListIt
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import InfoComonent from './components/InfoComponent';
 import { Link as LinkRouter } from 'react-router-dom';
-import { AccountCircle, AlternateEmail, LocationCity, PhoneAndroid } from '@material-ui/icons';
+import { AlternateEmail, LocationCity, PhoneAndroid } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -16,13 +16,13 @@ const ProfileView = () => {
     const classes = useStyles();
 
     const [info] = useState({
-        name: "Juan Perez",
-        subjects: ["Ingles", "Algebra", "Ciencias", "Frances", "Musica", "Arte"],
+        name: "Juan Pérez",
+        subjects: ["Ingles", "Algebra", "Ciencias", "Francés", "Música", "Arte"],
         rating: 3,
         students: 125,
         academicTraining: [
             {
-             tittle: "Licenciatura en Matematica",
+             tittle: "Licenciatura en Matemática",
              institution: "Universidad Autonoma de Panama - UAP",
              expeditionDate: 2005   
             }
@@ -144,7 +144,7 @@ const ProfileView = () => {
                         <TextField
                             label="Teléfono"
                             fullWidth
-                            defaultValue="(424) 529 4781"
+                            defaultValue="+57 (000) 001 0011"
                             InputProps={
                                 {
                                     readOnly:true,

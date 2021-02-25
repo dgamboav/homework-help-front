@@ -45,7 +45,7 @@ const InfoComonent = (props) => {
 
 InfoComonent.propTypes = {
     name: PropTypes.string.isRequired,
-    subject: PropTypes.string.isRequired,
+    subject: PropTypes.string,
     rating: PropTypes.number,
     students: PropTypes.number.isRequired
 }
