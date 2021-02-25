@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   Grid,
@@ -16,8 +17,8 @@ import {
 } from '@material-ui/icons';
 import AppStyles from '../../styles/AppStyles';
 import InfoCard from '../../common/InfoCard';
-const StudentsDashboardView = (props) => {
-  const { classes } = props;
+const StudentsDashboardView = (/* props */) => {
+  // const { classes } = props;
 
   return (
     <Grid container spacing={2}>
@@ -63,18 +64,12 @@ const StudentsDashboardView = (props) => {
           />
         </Link>
       </Grid>
-      {/* <Grid item xs={6}>
-        <Link component={RouterLink} to="/teachers" underline="none">
-          <InfoCard 
-            icon={<PhotoCamera />}
-            iconPosition="right"
-            // title="Next class"
-            subtitle={<b>Chemestry</b>}
-          />
-        </Link>
-      </Grid> */}
     </Grid>
   )
+};
+
+StudentsDashboardView.propTypes = {
+  classes: PropTypes.object,
 };
 
 export default withStyles(AppStyles)(StudentsDashboardView);

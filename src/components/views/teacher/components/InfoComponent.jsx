@@ -27,18 +27,18 @@ const InfoComonent = (props) => {
                 <Avatar alt={name} src="https://cdn.elnacional.com/wp-content/uploads/2020/03/La-casa-de-papel-Foto-Archivo-696x392.jpg " className={classes.large} />
             </Box>
             <Typography align={'center'} className variant="h5">{name}</Typography>
-            { subject ? (
+            {subject && (
               <Typography align={'center'} className variant="subtitle1">{subject}</Typography>
-            ) : ""}
-            { rating ? (
+            )}
+            {rating && (
                 <Box display="flex" justifyContent="center">
                     <Rating value={rating} readOnly size="small"></Rating>
                 </Box>
-            ) : "" } 
+            )} 
 
-            { students ? (
+            {students && (
                 <Typography align={'center'} className variant="subtitle2">({students} estudiantes)</Typography>
-            ) : ""}
+            )}
         </>
      );
 }

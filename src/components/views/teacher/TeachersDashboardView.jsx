@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   Grid,
   Link,
   LinearProgress,
-  // Box,
 } from '@material-ui/core';
 import {
   AccessAlarm,
@@ -13,7 +13,7 @@ import {
 } from '@material-ui/icons';
 import InfoCard from '../../common/InfoCard';
 
-const TeachersDashboardView = (props) => {
+const TeachersDashboardView = (/* props */) => {
   
   return (
     <Grid container spacing={2}>
@@ -70,6 +70,11 @@ const TeachersDashboardView = (props) => {
       </Grid>
     </Grid>
   )
+};
+
+
+TeachersDashboardView.propTypes = {
+  classes: PropTypes.object,
 };
 
 export default TeachersDashboardView;

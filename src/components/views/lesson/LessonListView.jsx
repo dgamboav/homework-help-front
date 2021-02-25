@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   Grid,
@@ -50,8 +51,8 @@ const teachers = [
   },
 ];
 
-const StudentsDashboardView = (props) => {
-  const { classes } = props;
+const LessonListView = (/* props */) => {
+  // const { classes } = props;
 
   const [teacherList, setTeacherList] = useState(teachers)
   // const [expanded, setExpanded] = useState([]);
@@ -102,4 +103,9 @@ const StudentsDashboardView = (props) => {
   )
 };
 
-export default withStyles(AppStyles)(StudentsDashboardView);
+LessonListView.propTypes = {
+  children: PropTypes.any,
+  classes: PropTypes.object,
+};
+
+export default withStyles(AppStyles)(LessonListView);

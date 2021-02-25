@@ -20,10 +20,9 @@ import LessonListView from '../views/lesson/LessonListView';
 const Router = () => {
   return (
     <Switch>
+      <AppRoute exact path="/" component={HomeView} layout={MainLayout} />
       <AppRoute exact path="/login" component={LoginView} layout={SimpleLayout} />
       <AppRoute exact path="/register" component={RegisterView} layout={SimpleLayout} />
-
-      <AppRoute exact path="/" component={HomeView} layout={MainLayout} />
       <AppRoute exact path="/students" component={StudentsDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teachers" component={TeachersDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teachers/lessons/list" component={LessonListView} layout={MainLayout} />

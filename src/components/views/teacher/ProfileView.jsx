@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Avatar, Box, Button, Chip, Grid, InputAdornment, List, ListItem, ListItemAvatar, ListItemText, makeStyles, TextField, Typography } from '@material-ui/core';
-import EventNoteIcon from '@material-ui/icons/EventNote';
+import { Avatar, Box, Chip, Grid, InputAdornment, List, ListItem, ListItemAvatar, ListItemText, makeStyles, TextField, Typography } from '@material-ui/core';
 import InfoComonent from './components/InfoComponent';
-import { Link as LinkRouter } from 'react-router-dom';
+// import { Link as LinkRouter } from 'react-router-dom';
 import { AlternateEmail, LocationCity, PhoneAndroid } from '@material-ui/icons';
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((/* theme */) => ({
     chip: {
         margin: '2px'
     },
@@ -48,22 +47,14 @@ const ProfileView = () => {
                 </Grid>
 
                 <Grid item xs={12}>
-
-                    <Box display="flex" justifyContent="center">
-                        <Typography variant="subtitle1">Materias Impartidas</Typography>
-                    </Box>
-
+                    <Typography variant="subtitle1" align="center">Materias Impartidas</Typography>
                     <Box display="flex" justifyContent="center" flexWrap="wrap">
                         {listSubjects}
                     </Box>
-                    
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Box display="flex" justifyContent="center">
-                        <Typography variant="subtitle1">Formación Académica</Typography>
-                    </Box>
-
+                    <Typography variant="subtitle1" align="center">Formación Académica</Typography>
                     <List>
                         <Grid container>
                             <Grid item xs={12} md={6}>
@@ -115,68 +106,70 @@ const ProfileView = () => {
                             </Grid>
                         </Grid>
                     </List>
-                    
                 </Grid>
-
+                <Grid item xs={12}>
                 {/* <form noValidate autoComplete="off" style={ { padding: '1rem' , width: '100%' } }> */}
-                    <Grid item xs={12} md={6}>
-                        <TextField 
-                            multiline 
-                            rows={1} 
-                            rowsMax={2} 
-                            fullWidth 
-                            label="Dirección" 
-                            defaultValue="Calle 1, edificio Santa Lucia, Dep 37-06 " 
-                            InputProps={
-                                {
-                                    readOnly:true,
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            <LocationCity />
-                                        </InputAdornment>
-                                    ),
-                                }
-                            }
-                        />
-                    </Grid>
 
-                    <Grid item xs={12} md={6}>
-                        <TextField
-                            label="Teléfono"
-                            fullWidth
-                            defaultValue="+57 (000) 001 0011"
-                            InputProps={
-                                {
-                                    readOnly:true,
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            <PhoneAndroid />
-                                        </InputAdornment>
-                                    ),
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} md={6}>
+                            <TextField 
+                                multiline 
+                                rows={1} 
+                                rowsMax={2} 
+                                fullWidth 
+                                label="Dirección" 
+                                defaultValue="Calle 1, edificio Santa Lucia, Dep 37-06 " 
+                                InputProps={
+                                    {
+                                        readOnly:true,
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <LocationCity />
+                                            </InputAdornment>
+                                        ),
+                                    }
                                 }
-                            }
-                        />
-                    </Grid>
+                            />
+                        </Grid>
 
-                    <Grid item xs={12} md={6}>
-                        <TextField
-                            label="Correo"
-                            fullWidth
-                            defaultValue="juanperez@gmail.com"
-                            InputProps={
-                                {
-                                    readOnly:true,
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            <AlternateEmail />
-                                        </InputAdornment>
-                                    ),
+                        <Grid item xs={12} md={6}>
+                            <TextField
+                                label="Teléfono"
+                                fullWidth
+                                defaultValue="+57 (000) 001 0011"
+                                InputProps={
+                                    {
+                                        readOnly:true,
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <PhoneAndroid />
+                                            </InputAdornment>
+                                        ),
+                                    }
                                 }
-                            }
-                        />
+                            />
+                        </Grid>
+
+                        <Grid item xs={12} md={6}>
+                            <TextField
+                                label="Correo"
+                                fullWidth
+                                defaultValue="juanperez@gmail.com"
+                                InputProps={
+                                    {
+                                        readOnly:true,
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <AlternateEmail />
+                                            </InputAdornment>
+                                        ),
+                                    }
+                                }
+                            />
+                        </Grid>
                     </Grid>
                 {/* </form> */}
-
+                </Grid>
             </Grid>
         </>
      );

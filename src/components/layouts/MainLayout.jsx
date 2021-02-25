@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {
   CssBaseline,
@@ -22,13 +23,20 @@ const MainLayout = (props) => {
       <CssBaseline />
       <Header title={title} />
       <main className={classes.content}>
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" className={classes.container}>
           {children}
         </Container>
       </main>
       <Footer />
     </div>
   )
+};
+
+
+MainLayout.propTypes = {
+  children: PropTypes.any,
+  classes: PropTypes.object,
+  title: PropTypes.any,
 };
 
 export default withStyles(AppStyles)(MainLayout);

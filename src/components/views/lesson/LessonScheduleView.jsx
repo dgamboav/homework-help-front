@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import { Box, Button,  Grid, makeStyles } from '@material-ui/core';
+import { Button,  Grid, makeStyles } from '@material-ui/core';
 import DatePicker from '../../common/DatePicker';
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import {default as TeacherInfoComponent} from '../teacher/components/InfoComponent';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     timeButton: {
-        width: "80%",
-        background: "#80D872"
+        backgroundColor: theme.palette.tertary.main,
+        '&:active': {
+            backgroundColor: theme.palette.tertary.dark,
+        },
+        '&:hover': {
+            backgroundColor: theme.palette.tertary.dark,
+        },
     },
   }));
 
@@ -24,30 +29,28 @@ const LessonScheduleView = () => {
 
     return ( 
         <div>
-            <Grid container>
+            <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <TeacherInfoComponent name="Juan Pérez" subject="Algebra" />
                 </Grid>
 
-                <Grid container item xs={12} display="flex" justify="center">
+                <Grid item xs={12}>
                    <DatePicker />
                 </Grid>
 
-                <Grid container item xs={12}>
-                    {times.map((time, i) => {
-                        return(
-                            <Grid key={i}  xs={12} >
-                                <Box m={1} display="flex" justifyContent="center">
-                                    <Button variant="contained" color="primary" size="large" className={classes.timeButton}>
+                <Grid item xs={12}>
+                    <Grid container spacing={2}>
+                        {times.map((time, i) => {
+                            return(
+                                <Grid item key={i}  xs={12} >
+                                    <Button variant="contained" color="primary" size="large" className={classes.timeButton} fullWidth>
                                         <AccessAlarmIcon />
                                         {time}
                                     </Button>
-                                </Box>
-                            </Grid>
-                        )                                 
-                    })}
-
-
+                                </Grid>
+                            )                                 
+                        })}
+                    </Grid>
                 </Grid>
             </Grid>
         </div>
