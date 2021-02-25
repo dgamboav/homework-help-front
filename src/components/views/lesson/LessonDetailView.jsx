@@ -5,7 +5,7 @@ import {default as TeacherInfoComponent} from '../teacher/components/InfoCompone
 import { Link as LinkRouter } from 'react-router-dom';
 
 const LessonDetailView = () => {
-    const [name] = useState("Juan Perez")
+    const [name] = useState("Juan Pérez")
     const [subject] = useState("Algebra")
     const [rating] = useState(3)
     const [students] = useState(125)

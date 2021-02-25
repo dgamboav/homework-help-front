@@ -1,7 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { Link as RouterLink, useHistory } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
+import AppStyles from '../../../styles/AppStyles';
+import { useForm } from '../../../../hooks/useForm';
 import {
     Grid,
     Button,
@@ -11,13 +13,15 @@ import {
     Link,
     Container
 } from '@material-ui/core';
-import AppStyles from '../../../styles/AppStyles';
-import { useForm } from '../../../../hooks/useForm';
+import PropTypes from 'prop-types';
+import { login } from '../../../../actions/auth';
 
 
 
 const LoginView = (props) => {
     const history = useHistory();
+    const dispatch = useDispatch();
+
     const { classes } = props;
 
 
@@ -30,6 +34,15 @@ const LoginView = (props) => {
 
     const handleSubmitLoginForm = (e) => {
         e.preventDefault();
+
+        const data = {
+            id: 1,
+            username: 'profesorperez',
+            email: 'juanperez@gmail.com',
+            roles: ['TEACHER', 'ADMIN']
+        }
+        
+        dispatch(login(data));
 
         console.log("Enviado");
         console.log(formValues);
