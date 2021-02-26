@@ -1,7 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link as RouterLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link as RouterLink, useHistory } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
+import AppStyles from '../../../styles/AppStyles';
+import { useForm } from '../../../../hooks/useForm';
 import {
     Grid,
     Button,
@@ -11,14 +13,42 @@ import {
     Link,
     Container
 } from '@material-ui/core';
-import AppStyles from '../../../styles/AppStyles';
+import PropTypes from 'prop-types';
+import { login } from '../../../../actions/auth';
 
 
 
 const LoginView = (props) => {
-    const {
-        classes,
-    } = props;
+    const history = useHistory();
+    const dispatch = useDispatch();
+
+    const { classes } = props;
+
+
+    const [ formValues, handleInputChange ] = useForm({
+        email: 'juanperez@gmail.com',
+        password: '1234'
+    });
+
+    const { email, password } = formValues;
+
+    const handleSubmitLoginForm = (e) => {
+        e.preventDefault();
+
+        const data = {
+            id: 1,
+            username: 'profesorperez',
+            email: 'juanperez@gmail.com',
+            roles: ['TEACHER', 'ADMIN']
+        }
+        
+        dispatch(login(data));
+
+        console.log("Enviado");
+        console.log(formValues);
+
+        history.push('/students')
+    }
 
     return (
         <Container maxWidth="sm">
@@ -48,7 +78,7 @@ const LoginView = (props) => {
                 </Grid>
             </Grid>
             <Box marginY="1.5rem">
-                <form>
+                <form onSubmit={ handleSubmitLoginForm }>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={12}>
                             <TextField  
@@ -57,6 +87,8 @@ const LoginView = (props) => {
                                 type="email"
                                 label="E-mail"
                                 fullWidth
+                                onChange={ handleInputChange }
+                                value={ email }
                             />
                         </Grid>
                         <Grid item xs={12} sm={12}>
@@ -66,12 +98,15 @@ const LoginView = (props) => {
                                 type="password"
                                 label="Contraseña"
                                 fullWidth
+                                onChange={ handleInputChange }
+                                value={ password }
                             />
                         </Grid>
                         <Grid item xs={12} sm={12}>
                             <Button
                                 variant="contained"
                                 color="primary"
+                                type="submit"
                                 fullWidth
                             >
                                 Iniciar Sesión

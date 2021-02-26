@@ -81,8 +81,10 @@ const LessonListView = (/* props */) => {
             ratingValue={teacher.rating}
             actions={(
               <>
-                <Button component={RouterLink} to="/" color="primary" variant="outlined">Agendar</Button>
-                <Button onClick={() => openInfo(teacher)}>Ver más...</Button>
+                <Button component={RouterLink} to="/teacher/lesson/schedule" color="primary" variant="outlined">Agendar</Button>
+                {/* <Button onClick={() => openInfo(teacher)}>Ver más...</Button> */}
+                <Button component={RouterLink} to="/teacher/lesson" >Ver más...</Button>
+
               </>
             )}
             extraContent={(
