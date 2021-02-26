@@ -1,11 +1,11 @@
 import React from 'react';
 import {
   Typography,
-  CardHeader,
+  CardMedia,
   Card,
   CardContent,
   CardActions,
-  Avatar,
+  CardHeader,
   Box,
   useMediaQuery,
 } from '@material-ui/core';
@@ -37,17 +37,23 @@ const StatsCard = (props) => {
 
   // const avatarSrc = 
 
-  const renderAvatar = <Avatar aria-label="icon" className={classes.avatar} src={url} />
+  // const renderAvatar = <Avatar aria-label="icon" className={classes.avatar} src={url} />
     {/* {isIcon && (icon)} */}
   // </Avatar>;
 
-  const renderTitle = <Typography variant="h5" align={align}>
+  const renderTitle = <Typography variant="h5">
     {title}
   </Typography>;
 
-  const renderSubtitle = <Typography variant="subtitle1" align={align} noWrap>
+  const renderSubtitle = <Typography variant="subtitle1" color="textSecondary" noWrap>
     {subtitle}
   </Typography>;
+
+  const renderPicture = <CardMedia
+    className={classes.cover}
+    image={url}
+    title={title}
+  />
 
   const renderHeaderActions = <Box display="flex" flexDirection="column" justifyContent="center">
     <Rating name="size-small" value={ratingValue} size={screenSize ? 'small' : 'medium'} precision={0.5} max={screenSize ? 1 :5} />
@@ -55,26 +61,26 @@ const StatsCard = (props) => {
   </Box>;
 
   return(
-    <Card className={classes.card}>
-      <CardHeader
-        avatar={isAvatar || isIcon ? renderAvatar : null}
-        title={title ? renderTitle : null}
-        subheader={subtitle ? renderSubtitle : null}
-        action={headerAction ? renderHeaderActions : null}
-      />
-      {content && (
-        <CardContent className={classes.cardContent}>
-          {content}
-        </CardContent>
-      )}
-      {actions && (
-        <CardActions className={classes.cardActions}>
-          {actions}
-        </CardActions>
-      )}
-      {extraContent && (
-        <>{extraContent}</>
-      )}
+    <Card className={classes.cardPicture}>
+      {(align === 'right') && renderPicture}
+      <Box display="flex" flexDirection="column" width="100%">
+        <CardHeader 
+          title={title ? renderTitle : null}
+          subheader={subtitle ? renderSubtitle : null}
+          action={headerAction ? renderHeaderActions : null}
+        />
+        {content && (
+          <CardContent>
+            {content}
+          </CardContent>
+        )}
+        {actions && (
+          <CardActions>
+            {actions}
+          </CardActions>
+        )}
+      </Box>
+      {(align === 'left') && renderPicture}
     </Card>
   )
 };

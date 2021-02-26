@@ -6,6 +6,7 @@ import {
   CardContent,
   Avatar,
   Box,
+  useMediaQuery,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import AppStyles from '../styles/AppStyles';
@@ -20,6 +21,7 @@ const InfoCard = (props) => {
     iconPosition,
    } = props;
 
+  const screenSize = useMediaQuery(theme => theme.breakpoints.down('sm'));
 
   return (
     <Card className={classes.card}>
@@ -35,12 +37,12 @@ const InfoCard = (props) => {
           >
             <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center">
               {title && (
-                <Typography variant="h5" noWrap>
+                <Typography variant="h5">
                   {title}
                 </Typography>
               )}
               {subtitle && (
-                <Typography variant="body2" color="primary" noWrap>
+                <Typography variant="body2" color="primary">
                   {subtitle}
                 </Typography>
               )}

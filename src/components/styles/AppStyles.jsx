@@ -47,16 +47,7 @@ const AppStyles = (theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  micIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    // position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  },ifyContent: 'center',
   inputRoot: {
     color: 'inherit',
   },
@@ -93,7 +84,12 @@ const AppStyles = (theme) => ({
     // background: theme.palette.primary.main,
   },
   card: {
-    // boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
+    '&:hover': {
+      boxShadow: '0 10px 20px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
+    },
+  },
+  cardPicture: {
+    display: 'flex',
     '&:hover': {
       boxShadow: '0 10px 20px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
     },
@@ -124,7 +120,22 @@ const AppStyles = (theme) => ({
   },
   large: {
     backgroundColor: theme.palette.primary.main,
-  }
+  },
+  iconSmall: {
+    
+  },
+  cover: {
+    width: 151,
+  },
+  noWrapText: {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  },
+  wrapText: {
+    wordWrap: 'break-word',
+
+  },
 });
 
 export default AppStyles;

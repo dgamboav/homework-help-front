@@ -7,8 +7,9 @@ import {
   Typography,
   InputBase,
   Box,
+  InputAdornment,
 } from '@material-ui/core';
-import { Menu, Search, Notifications } from '@material-ui/icons';
+import { Menu, Search, Notifications, FilterList } from '@material-ui/icons';
 import AppStyles from '../../styles/AppStyles';
 
 
@@ -37,10 +38,23 @@ const Header = (props) => {
                   input: classes.inputInput,
                 }}
                 inputProps={{ 'aria-label': 'search' }}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      size="small"
+                      aria-label="toggle password visibility"
+                      style={{
+                        marginRight: '.5rem',
+                      }}
+                      // onClick={handleClickShowPassword}
+                      // onMouseDown={handleMouseDownPassword}
+                    >
+                      <FilterList className={classes.iconSmall} color="primary" />
+                      {/* {values.showPassword ? <Visibility /> : <VisibilityOff />} */}
+                    </IconButton>
+                  </InputAdornment>
+                }
               />
-              {/* <div>
-                <Search />
-              </div> */}
             </div>
           </Box>
           <IconButton edge="end" color="inherit" aria-label="menu">
