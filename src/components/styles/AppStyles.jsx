@@ -10,6 +10,7 @@ const AppStyles = (theme) => ({
   appBar: {
     color: theme.palette.primary.main
   },
+  toolbar: theme.mixins.toolbar,
   logo: {
     width: theme.spacing(10),
     height: theme.spacing(10),
@@ -134,7 +135,20 @@ const AppStyles = (theme) => ({
   },
   wrapText: {
     wordWrap: 'break-word',
+  },
+  drawer: {
+  },
+  drawerList: {
+    width: 250,
 
+  },
+  landingContainer: {
+    display: 'flex',
+    flexGrow: 1,
+    height: '50vh',
+    overflow: 'auto',
+    flexDirection: 'column',
+    backgroundColor: theme.palette.tertary.main
   },
 });
 

@@ -1,20 +1,20 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { esES } from '@material-ui/core/locale';
-// import Nunito from '../fonts/NunitoFont';
+import Montserrat from './fonts/MontserratFont';
 // import Quicksand from '../fonts/QuicksandFont';
 // import Rubik from '../fonts/RubikFont';
 
 const HomeworkHelpTheme = createMuiTheme({
-  // typography: {
-  //   fontFamily: 'Nunito, Quicksand, Rubik, Arial',
-  // },
-  // overrides: {
-  //   MuiCssBaseline: {
-  //     '@global': {
-  //       '@font-face': [Nunito],
-  //     },
-  //   },
-  // },
+  typography: {
+    fontFamily: 'Montserrat, Quicksand, Rubik, Arial',
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        '@font-face': [Montserrat],
+      },
+    },
+  },
   palette: {
     primary: {
       light: '#59abf2',

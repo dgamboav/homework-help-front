@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const InfoComonent = (props) => {
+const InfoComponent = (props) => {
     const classes = useStyles();
 
     const {name, subject, rating, students} = props
@@ -26,9 +26,9 @@ const InfoComonent = (props) => {
             <Box display="flex" justifyContent="center" m={1} p={1} bgcolor="background.paper">
                 <Avatar alt={name} src="https://cdn.elnacional.com/wp-content/uploads/2020/03/La-casa-de-papel-Foto-Archivo-696x392.jpg " className={classes.large} />
             </Box>
-            <Typography align={'center'} className variant="h5">{name}</Typography>
+            <Typography align="center" variant="h5">{name}</Typography>
             {subject && (
-              <Typography align={'center'} className variant="subtitle1">{subject}</Typography>
+              <Typography align="center" variant="subtitle1">{subject}</Typography>
             )}
             {rating && (
                 <Box display="flex" justifyContent="center">
@@ -37,17 +37,17 @@ const InfoComonent = (props) => {
             )} 
 
             {students && (
-                <Typography align={'center'} className variant="subtitle2">({students} estudiantes)</Typography>
+                <Typography align="center" className variant="subtitle2">({students} estudiantes)</Typography>
             )}
         </>
      );
 }
 
-InfoComonent.propTypes = {
+InfoComponent.propTypes = {
     name: PropTypes.string.isRequired,
     subject: PropTypes.string,
     rating: PropTypes.number,
-    students: PropTypes.number.isRequired
+    students: PropTypes.number
 }
  
-export default InfoComonent;
+export default InfoComponent;

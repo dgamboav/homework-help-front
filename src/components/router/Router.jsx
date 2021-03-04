@@ -5,9 +5,10 @@ import AppRoute from './AppRoute';
 // Layouts
 import MainLayout from '../layouts/MainLayout';
 import SimpleLayout from '../layouts/SimpleLayout';
+import LandingPageLayout from '../layouts/LandingPageLayout';
 
 // Pages
-// import HomeView from '../views/home/HomeView';
+import HomeLandingView from '../views/website/HomeLandingView';
 import StudentsDashboardView from '../views/student/StudentsDashboardView';
 import TeachersDashboardView from '../views/teacher/TeachersDashboardView';
 import TeachersListView from '../views/teacher/TeachersListView';
@@ -21,9 +22,11 @@ import LessonListView from '../views/lesson/LessonListView';
 const Router = () => {
   return (
     <Switch>
-      <AppRoute exact path="/" component={LoginView} layout={SimpleLayout} />
-      <AppRoute exact path="/login" component={LoginView} layout={SimpleLayout} />
+      <AppRoute exact path="/" component={HomeLandingView} layout={LandingPageLayout} />
+      <AppRoute exact path="/home" component={HomeLandingView} layout={LandingPageLayout} />
+      <AppRoute exact path="/login" component={LoginView} layout={LandingPageLayout} />
       <AppRoute exact path="/register" component={RegisterView} layout={SimpleLayout} />
+      <AppRoute exact path="/register/2" component={RegisterView} layout={SimpleLayout} />
       <AppRoute exact path="/students" component={StudentsDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teachers" component={TeachersDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teachers/list" component={TeachersListView} layout={MainLayout} />
