@@ -1,11 +1,11 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 
-const RegisterView = () => {
+const RegisterStudents = () => {
     return ( 
         <>
             <Typography variant="h1">
-                Registro de Usuario    
+                Registro de Estudiantes   
             </Typography>
         </> 
         
@@ -13,4 +13,4 @@ const RegisterView = () => {
     );
 }
  
-export default RegisterView;
+export default RegisterStudents;

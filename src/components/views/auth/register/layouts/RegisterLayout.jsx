@@ -4,8 +4,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import {makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
-import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -73,16 +71,13 @@ export default function ProminentAppBar() {
 
       <CssBaseline />
       <Container maxWidth="xs" style={{paddingTop:70}}>
-	  <Box display="flex" flexDirection="row" justifyContebt="center">
-        <img src="../img/" alt="Logo"/>
-      </Box>
-        <Grid container spacing={8}>
+        <Grid container spacing={2}>
           <Grid item xs={10}></Grid>
         </Grid>
         <Grid container spacing={12}>
           <Grid item xs={10}></Grid>
         </Grid>
-        <Grid container spacing={8}>
+        <Grid container spacing={2}>
           <Grid item xs={10}>
             <Typography align="center" variant="h5" noWrap>
               Registrate con tu e-mail
@@ -90,10 +85,10 @@ export default function ProminentAppBar() {
           </Grid>
         </Grid>
 
-        <Grid container spacing={10}>
+        <Grid container spacing={2}>
           <Grid item xs={2}></Grid>
         </Grid>
-        <Grid container spacing={10}>
+        <Grid container spacing={2}>
           <Grid item xs={12}></Grid>
         </Grid>
         <Grid container spacing={2}>
