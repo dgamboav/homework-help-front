@@ -35,7 +35,7 @@ const StudentsDashboardView = (/* props */) => {
         />
       </Grid>
       <Grid item xs={6}>
-        <Link component={RouterLink} to="/teachers" underline="none">
+        <Link component={RouterLink} to="/teachers/list" underline="none">
           <InfoCard 
             icon={<Face />}
             iconPosition="right"

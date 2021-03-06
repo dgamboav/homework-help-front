@@ -60,7 +60,7 @@ const ProfileView = () => {
                             <Grid item xs={12} md={6}>
                                 <ListItem>
                                     <ListItemAvatar>
-                                        <Avatar alt="Test"></Avatar>
+                                        <Avatar alt="Test" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMD7KPHzPvgTXID0cPqJZSODA79n55IRRFCQ&usqp=CAU"></Avatar>
                                     </ListItemAvatar>
 
                                     <ListItemText 
@@ -84,7 +84,7 @@ const ProfileView = () => {
                             <Grid item xs={12} md={6}>
                                 <ListItem>
                                     <ListItemAvatar>
-                                        <Avatar alt="Test"></Avatar>
+                                        <Avatar alt="Test" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMD7KPHzPvgTXID0cPqJZSODA79n55IRRFCQ&usqp=CAU"></Avatar>
                                     </ListItemAvatar>
 
                                     <ListItemText 
