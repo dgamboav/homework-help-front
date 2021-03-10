@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import { shadows } from '@material-ui/system';
 import { withStyles } from '@material-ui/core/styles';
 import {
     AppBar,
@@ -26,8 +27,9 @@ const SimpleLayout = (props) => {
                 <Toolbar />
             </AppBar>
             <Box width="100%" display="flex" flexDirection="row" justifyContent="center">
-                <Avatar src={Logo} alt="Logo" className={classes.logo} style={{ zIndex: 9999 }} />
+                <Avatar  src={Logo} alt="Logo" className={classes.logo} style={{ zIndex: 9999, position: 'fixed' }} />
             </Box>
+            <div className={classes.toolbar} />
             <main className={classes.content}>
                 <Container maxWidth="xl" className={classes.container}>
                     {children}

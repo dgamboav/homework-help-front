@@ -16,8 +16,7 @@ import InfoCard from '../../common/InfoCard';
 const TeachersDashboardView = (/* props */) => {
   
   return (
-    <Grid container spacing={2}>
-      
+    <Grid container spacing={2}> 
       <Grid item xs={12} sm={12}>
         <InfoCard 
           title="Próxima clase"
@@ -69,7 +68,7 @@ const TeachersDashboardView = (/* props */) => {
         </Link>
       </Grid>
     </Grid>
-  )
+  );
 };
 
 
