@@ -35,7 +35,7 @@ const LandingPageStyles = (theme) => ({
     },
     // overflow: 'auto',
     flexDirection: 'column',
-    backgroundColor: theme.palette.quaternary.main,
+    backgroundColor: theme.palette.background.paper,
   },
   blogSection: {
     display: 'flex',
@@ -51,7 +51,7 @@ const LandingPageStyles = (theme) => ({
     },
     // overflow: 'auto',
     flexDirection: 'column',
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: theme.palette.background.paper,
   },
   servicesSection: {
     display: 'flex',
@@ -100,7 +100,7 @@ const LandingPageStyles = (theme) => ({
   avatarSize: {
     width: theme.spacing(9),
     height: theme.spacing(9),
-    // background: GlobalStyles.clientsGradient,
+    background: theme.palette.secondary.main,
     marginTop: '6px',
     borderRadius: 15,
     color: '#fff',
