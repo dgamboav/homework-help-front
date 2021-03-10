@@ -3,25 +3,18 @@ import PropTypes from 'prop-types';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import {
   CssBaseline,
-  useMediaQuery,
+  // useMediaQuery,
   // Link,
-  useScrollTrigger ,
+  useScrollTrigger,
   Zoom,
-  AppBar,
-  Toolbar,
-  Typography,
   Fab,
-  Box,
-  Button,
-  IconButton,
 } from '@material-ui/core';
 import {
-  Menu,
   KeyboardArrowUp,
 } from '@material-ui/icons';
 // import { Link as RouterLink } from 'react-router-dom';
 import AppStyles from '../styles/AppStyles';
-// import Header from './components/Header';
+import Header from './components/LandingHeader';
 import Footer from './components/Footer';
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 const ScrollTop = (props) => {
   const { children, window } = props;
   const classes = useStyles();
-  
+
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
@@ -68,49 +61,15 @@ const LandingPageLayout = (props) => {
   const {
     children,
     classes,
-    // title,
   } = props;
-
-  const screenSize = useMediaQuery(theme => theme.breakpoints.down('sm'));
-
 
   return (
     <div className={classes.root}>
       <CssBaseline />
       <div id="back-to-top-anchor" />
-      <AppBar>
-        <Toolbar>
-          <Box width="100%" display="flex" flexDirection="row" justifyContent="space-between" alignItems="center">
-            <Typography variant="h6" align={screenSize ? 'left' : 'center'}>HomeworkHelp</Typography>
-            {!screenSize && (
-              <>
-                <Box>
-                  <Button>Inicio</Button>
-                  <Button>Servicios</Button>
-                  <Button>Blog</Button>
-                  <Button>Contacto</Button>
-                </Box>
-                <Box>
-                  <Button>Ingresar</Button>
-                  <Button>Registrarse</Button>
-                </Box>
-              </>
-            )}
-            {screenSize && (
-              <>
-                <IconButton>
-                  <Menu color="inherit" />
-                </IconButton> 
-              </>
-            )}
-          </Box>
-        </Toolbar>
-      </AppBar>
-      {/* <div className={classes.toolbar} /> */}
+      <Header />
       <main>
-        {/* <Container maxWidth="xl"> */}
-          {children}
-        {/* </Container> */}
+        {children}
       </main>
       <ScrollTop {...props}>
         <Fab color="secondary" size="small" aria-label="scroll back to top">
@@ -121,7 +80,6 @@ const LandingPageLayout = (props) => {
     </div>
   )
 };
-
 
 LandingPageLayout.propTypes = {
   children: PropTypes.any,

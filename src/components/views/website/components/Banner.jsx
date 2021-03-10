@@ -10,7 +10,6 @@ import {
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-
 import LandingPageStyles from '../../../styles/LandingPageStyles';
 
 import countries from './data'
@@ -26,8 +25,9 @@ function countryToFlag(isoCode) {
 const Banner = (props) => {
   const { classes } = props;
 
+
   return (
-    <section className={classes.banner}>
+    <section className={classes.bannerSection}>
       <div className={classes.toolbar} />
       <Box width="100%" height="100%" display="flex" flexDirection="row" justifyContent="center" alignItems="center">
         <Container maxWidth="lg">
@@ -59,6 +59,9 @@ const Banner = (props) => {
                 renderInput={(params) => (
                   <TextField
                     {...params}
+                    classes={{
+                      root: classes.filledInput,
+                    }}
                     label="Elije una Materia"
                     variant="outlined"
                     inputProps={{
@@ -88,6 +91,9 @@ const Banner = (props) => {
                 renderInput={(params) => (
                   <TextField
                     {...params}
+                    classes={{
+                      root: classes.filledInput,
+                    }}
                     label="Ciudad"
                     variant="outlined"
                     inputProps={{
@@ -117,6 +123,9 @@ const Banner = (props) => {
                 renderInput={(params) => (
                   <TextField
                     {...params}
+                    classes={{
+                      root: classes.filledInput,
+                    }}
                     label="Ubicacion"
                     variant="outlined"
                     inputProps={{

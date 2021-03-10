@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {
   AppBar,
@@ -31,8 +32,6 @@ const subjects = [
   { name: 'Redes' },
   { name: 'Algebra' },
 ];
-
-
 
 const Header = (props) => {
   const { title, classes } = props;
@@ -138,6 +137,11 @@ const Header = (props) => {
       </Drawer>
     </header>
   );
+};
+
+Header.propTypes = {
+  classes: PropTypes.object,
+  title: PropTypes.any,
 };
 
 export default withStyles(AppStyles)(Header);

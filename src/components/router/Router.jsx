@@ -24,7 +24,7 @@ const Router = () => {
     <Switch>
       <AppRoute exact path="/" component={HomeLandingView} layout={LandingPageLayout} />
       <AppRoute exact path="/home" component={HomeLandingView} layout={LandingPageLayout} />
-      <AppRoute exact path="/login" component={LoginView} layout={LandingPageLayout} />
+      <AppRoute exact path="/login" component={LoginView} layout={SimpleLayout} />
       <AppRoute exact path="/register" component={RegisterView} layout={SimpleLayout} />
       <AppRoute exact path="/register/2" component={RegisterView} layout={SimpleLayout} />
       <AppRoute exact path="/students" component={StudentsDashboardView} layout={MainLayout} />

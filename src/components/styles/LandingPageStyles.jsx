@@ -1,8 +1,12 @@
-import { fade } from '@material-ui/core/styles';
+// import { fade } from '@material-ui/core/styles';
 
 const LandingPageStyles = (theme) => ({
   toolbar: theme.mixins.toolbar,
-  banner: {
+  filledInput: {
+    background: theme.palette.background.paper,
+    borderRadius: '4px',
+  },
+  bannerSection: {
     display: 'flex',
     flexGrow: 1,
     height: '60vh',
@@ -11,21 +15,74 @@ const LandingPageStyles = (theme) => ({
     },
     // overflow: 'auto',
     flexDirection: 'column',
-    backgroundColor: theme.palette.tertary.main
+    // backgroundColor: theme.palette.tertary.main,
+    backgroundSize: 'cover',
+    backgroundPosition: 'top center',
+    backgroundAttachment: 'fixed',
+    // background: `url(${Layer})`,
+    background: 'url(https://img.freepik.com/foto-gratis/grupo-jovenes-estudiantes-felices-universidad_85574-4531.jpg?size=626&ext=jpg&ga=GA1.2.1212857596.1613779200)'
   },
-  infoPanel: {
+  infoPanelSection: {
     display: 'flex',
     flexGrow: 1,
-    height: '25vh',
+    height: '40vh',
     [theme.breakpoints.down('sm')]: {
       height: '50vh',
     },
     [theme.breakpoints.down('xs')]: {
-      height: '100vh',
+      height: '100%',
+      padding: '2rem 0',
     },
     // overflow: 'auto',
     flexDirection: 'column',
-    backgroundColor: theme.palette.quaternary.main
+    backgroundColor: theme.palette.quaternary.main,
+  },
+  blogSection: {
+    display: 'flex',
+    flexGrow: 1,
+    minHeight: '50vh',
+    height: '100%',
+    padding: '2rem 0',
+    [theme.breakpoints.down('sm')]: {
+      height: '100vh',
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: '100%',
+    },
+    // overflow: 'auto',
+    flexDirection: 'column',
+    backgroundColor: theme.palette.primary.dark,
+  },
+  servicesSection: {
+    display: 'flex',
+    flexGrow: 1,
+    height: '100%',
+    padding: '2rem 0',
+    // overflow: 'auto',
+    flexDirection: 'column',
+    backgroundColor: theme.palette.background.paper,
+  },
+  contactSection: {
+    display: 'flex',
+    flexGrow: 1,
+    height: '100%',
+    padding: '2rem 0',
+    // overflow: 'auto',
+    flexDirection: 'column',
+    backgroundColor: theme.palette.background.paper,
+  },
+  heroContent: {
+    padding: theme.spacing(8, 0, 6),
+  },
+  cardHeader: {
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[700],
+  },
+  cardPricing: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'baseline',
+    marginBottom: theme.spacing(2),
   },
   option: {
     fontSize: 15,
@@ -36,6 +93,9 @@ const LandingPageStyles = (theme) => ({
   },
   bannerButton: {
     width: '200px',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
   },
   avatarSize: {
     width: theme.spacing(9),
@@ -44,6 +104,22 @@ const LandingPageStyles = (theme) => ({
     marginTop: '6px',
     borderRadius: 15,
     color: '#fff',
+  },
+  post: {
+    display: 'flex',
+  },
+  pstDetails: {
+    flex: 1,
+  },
+  postMedia: {
+    width: 300,
+  },
+  '@global': {
+    ul: {
+      margin: 0,
+      padding: 0,
+      listStyle: 'none',
+    },
   },
 });
 

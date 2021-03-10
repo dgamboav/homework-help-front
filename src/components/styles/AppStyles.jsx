@@ -10,6 +10,9 @@ const AppStyles = (theme) => ({
   appBar: {
     color: theme.palette.primary.main
   },
+  buttonLink: {
+    color: '#fff',
+  },
   toolbar: theme.mixins.toolbar,
   logo: {
     width: theme.spacing(10),
@@ -17,6 +20,7 @@ const AppStyles = (theme) => ({
     backgroundColor: '#fff',
     position: 'relative',
     top: 20,
+    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
   },
   buttonRounded: {
     borderRadius: 30,
@@ -48,7 +52,7 @@ const AppStyles = (theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-  },ifyContent: 'center',
+  }, ifyContent: 'center',
   inputRoot: {
     color: 'inherit',
   },
@@ -123,7 +127,7 @@ const AppStyles = (theme) => ({
     backgroundColor: theme.palette.primary.main,
   },
   iconSmall: {
-    
+
   },
   cover: {
     width: 151,
@@ -140,7 +144,6 @@ const AppStyles = (theme) => ({
   },
   drawerList: {
     width: 250,
-
   },
   landingContainer: {
     display: 'flex',
@@ -149,6 +152,37 @@ const AppStyles = (theme) => ({
     overflow: 'auto',
     flexDirection: 'column',
     backgroundColor: theme.palette.tertary.main
+  },
+  // Steppers Styles
+  stepperContainer: {
+    padding: 16,
+  },
+  alternativeLabel: {
+    top: 22,
+  },
+  activeStepper: {
+    '& $line': {
+      backgroundImage: `linear-gradient(45deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 50%, ${theme.palette.tertary.main} 100%)`,
+    },
+  },
+  completedStepper: {
+    '& $line': {
+      backgroundImage: `linear-gradient(45deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 50%, ${theme.palette.tertary.main} 100%)`,
+    },
+  },
+  line: {
+    height: 3,
+    border: 0,
+    backgroundColor: '#eaeaf0',
+    borderRadius: 1,
+  },
+  centerImage: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  appImage: {
+    width: '75%',
   },
 });
 

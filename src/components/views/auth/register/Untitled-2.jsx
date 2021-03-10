@@ -48,38 +48,23 @@ export default function ProminentAppBar() {
             </Typography>
           </Grid>
           
-              <Button variant="contained" color="primary" fullWidth  >
-                <Typography variant="body1" color="initial" style={{textTransform:'none'}} >
+              <Button variant="contained" color="primary" fullWidth>
                 Basico
-                </Typography>
-                
               </Button>
-              <Button variant="contained" color="primary" fullWidth style={{marginTop: 12}} >
-              <Typography variant="body1" color="initial" style={{textTransform:'none'}} >
+              <Button variant="contained" color="primary" fullWidth>
                 Bachillerato
-                </Typography>
-                
               </Button>
 
-              <Button variant="contained" color="primary" fullWidth style={{marginTop: 12}} >
-              <Typography variant="body1" color="initial" style={{textTransform:'none'}} >
+              <Button variant="contained" color="primary" fullWidth>
                 Tecnico Superior
-                </Typography>
-                
               </Button>
 
-              <Button variant="contained" color="primary" fullWidth style={{marginTop: 15}} >
-              <Typography variant="body1" color="initial" style={{textTransform:'none'}} >
+              <Button variant="contained" color="primary" fullWidth>
                 Universitario
-                </Typography>
-                
               </Button>
 
-              <Button variant="contained" color="primary" fullWidth style={{marginTop: 15}} >
-              <Typography variant="body1" color="initial" style={{textTransform:'none'}} >
+              <Button variant="contained" color="primary" fullWidth>
                 Maestria
-                </Typography>
-                
               </Button>
              
            
@@ -88,3 +73,39 @@ export default function ProminentAppBar() {
     </div>
   );
 }
+{/* <Grid container spacing={2}>
+                <Grid item xs={6}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        fullWidth
+                        className={classes.buttonRounded}
+                    >
+                        Soy Profesor
+                    </Button>
+                </Grid>
+                <Grid item xs={6}>
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        fullWidth
+                        className={classes.buttonRounded}
+                    >
+                        Soy Estudiante
+                    </Button>
+                </Grid>
+            </Grid> */}
+{/* {activeStep === steps.length ? (
+                <div>
+                    <Typography className={classes.instructions}>
+                        All steps completed - you&apos;re finished
+                    </Typography>
+                    <Button onClick={handleReset} className={classes.button}>
+                        Reset
+                    </Button>
+                </div>
+            ) : (
+                <>
+                </>
+            )} */}
+
