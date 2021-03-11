@@ -24,9 +24,13 @@ const InfoComonent = (props) => {
     return ( 
         <>
             <Box display="flex" justifyContent="center" m={1} p={1} bgcolor="background.paper">
-                <Avatar alt={name} src="https://cdn.elnacional.com/wp-content/uploads/2020/03/La-casa-de-papel-Foto-Archivo-696x392.jpg " className={classes.large} />
+                <Avatar alt={name}  className={classes.large} />
             </Box>
-            <Typography align={'center'} className variant="h5">{name}</Typography>
+            {name && (
+              <Typography align={'center'} className variant="h5">{name}</Typography>
+            )}
+
+            
             {subject && (
               <Typography align={'center'} className variant="subtitle1">{subject}</Typography>
             )}

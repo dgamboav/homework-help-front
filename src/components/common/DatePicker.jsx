@@ -4,7 +4,7 @@ import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/picker
 import esLocale from 'date-fns/locale/es';
 
 const DatePicker = () => {
-    const [selectedDate, setSelectedDate] = React.useState(new Date());
+    const [selectedDate, setSelectedDate] = React.useState();
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -14,8 +14,7 @@ const DatePicker = () => {
         <MuiPickersUtilsProvider utils={DateFnsUtils} locale={esLocale}>
             <KeyboardDatePicker
                 variant="dialog"
-                inputVariant="outlined"
-                margin="normal"
+                // margin="normal"
                 id="date-picker-dialog"
                 label="Fecha"
                 format="dd/MM/yyyy"

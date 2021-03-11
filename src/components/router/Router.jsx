@@ -10,6 +10,7 @@ import SimpleLayout from '../layouts/SimpleLayout';
 // import HomeView from '../views/home/HomeView';
 import StudentsDashboardView from '../views/student/StudentsDashboardView';
 import TeachersDashboardView from '../views/teacher/TeachersDashboardView';
+import TeacherRegisterView from '../views/teacher/TeacherRegisterView';
 import TeachersListView from '../views/teacher/TeachersListView';
 import RegisterView from '../views/auth/register/RegisterView';
 import LoginView from '../views/auth/login/LoginView';
@@ -26,6 +27,7 @@ const Router = () => {
       <AppRoute exact path="/register" component={RegisterView} layout={SimpleLayout} />
       <AppRoute exact path="/students" component={StudentsDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teachers" component={TeachersDashboardView} layout={MainLayout} />
+      <AppRoute exact path="/teachers/register" component={TeacherRegisterView} layout={MainLayout} />
       <AppRoute exact path="/teachers/list" component={TeachersListView} layout={MainLayout} />
       <AppRoute exact path="/teachers/lessons/list" component={LessonListView} layout={MainLayout} />
       <AppRoute exact path="/teacher/profile" component={TeacherProfileView} layout={MainLayout} />
