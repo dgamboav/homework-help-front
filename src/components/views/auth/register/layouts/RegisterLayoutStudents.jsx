@@ -10,9 +10,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
-
-
-
 const useStyles = makeStyles((theme) => ({
   root: {
     //*flexGrow: 1,*/}
@@ -54,103 +51,61 @@ export default function ProminentAppBar() {
             <Typography
               align="center"
               variant="h4"
-              style={{ paddingTop: 30, paddingBottom: 20 }}>
+              style={{ paddingTop: 30, paddingBottom: 20 }}
+            >
               Registrate con tus datos
             </Typography>
           </Grid>
         </Grid>
 
-
         <form>
-        <Grid container justify="center" spacing={2}>
+          <Grid container justify="center" spacing={2}>
             <Grid item xs={6}>
-                <TextField 
-                  id="name"
-                  label="Nombre"
-                  variant="outlined"
-                  />
-                  </Grid>
-            
-                  <Grid item xs={6}>
-                <TextField
-                  id="apellido"
-                  label="Apellido"
-                  variant="outlined"
-                  />
-                  </Grid>
+              <TextField id="name" label="Nombre" />
+            </Grid>
 
-                  <Grid item xs={12}>
-                  <TextField
-                  id="e-mail"
-                  label="Correo"
-                  variant="outlined"
-                  fullWidth
-                  />
-                  </Grid>
+            <Grid item xs={6}>
+              <TextField id="apellido" label="Apellido" />
+            </Grid>
 
-                  <Grid item xs={12}>
-                  <TextField
-                  id="pais"
-                  label="País"
-                  variant="outlined"
-                  fullWidth
-                  />
-                  </Grid>
+            <Grid item xs={12}>
+              <TextField id="e-mail" label="Correo" fullWidth />
+            </Grid>
 
-                  <Grid item xs={6}>
-                <TextField 
-                  id="name"
-                  label="Acudiente"
-                  variant="outlined"
-                  />
-                  </Grid>
-            
-                  <Grid item xs={6}>
-                <TextField
-                  id="cel"
-                  label="Celular"
-                  variant="outlined"
-                  />
-                  </Grid>
+            <Grid item xs={12}>
+              <TextField id="pais" label="País" fullWidth />
+            </Grid>
 
-                  <Grid item xs={12}>
-                  <TextField
-                  id="text"
-                  label="Centro Educativo"
-                  variant="outlined"
-                  fullWidth
-                  />
-                  </Grid>
+            <Grid item xs={6}>
+              <TextField id="name" label="Acudiente" />
+            </Grid>
 
-                  <Grid item xs={6}>
-                <TextField 
-                  id="nivel"
-                  label="Nivel/Grado"
-                  variant="outlined"
-                  />
-                  </Grid>
-            
-                  <Grid item xs={6}>
-                <TextField
-                  id="lenguaje"
-                  label="Idioma"
-                  variant="outlined"
-                  />
-                  </Grid>
+            <Grid item xs={6}>
+              <TextField id="cel" label="Celular" />
+            </Grid>
 
-                  
-                  <Grid item xs={12}>
-                  <TextField
-                  id="direction"
-                  label="Dirección"
-                  variant="outlined"
-                  fullWidth
-                  />
-                  </Grid>
+            <Grid item xs={12}>
+              <TextField id="text" label="Centro Educativo" fullWidth />
+            </Grid>
 
-                </Grid>
-                  
+            <Grid item xs={6}>
+              <TextField id="nivel" label="Nivel/Grado" />
+            </Grid>
 
+            <Grid item xs={6}>
+              <TextField id="lenguaje" label="Idioma" />
+            </Grid>
+
+            <Grid item xs={12}>
+              <TextField id="direction" label="Dirección" fullWidth style={{paddingBottom:50}} />
+            </Grid>
+          </Grid>
+
+          <Grid item xs={12} style={{paddingBottom:20}}>
+            <Button variant="contained" color="primary" fullWidth>
+              Registrate
+            </Button>
+          </Grid>
         </form>
       </Container>
     </div>
