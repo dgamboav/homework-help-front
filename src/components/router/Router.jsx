@@ -18,12 +18,17 @@ import TeacherProfileView from '../views/teacher/ProfileView';
 import LessonScheduleView from '../views/lesson/LessonScheduleView';
 import LessonDetailView from '../views/lesson/LessonDetailView';
 import LessonListView from '../views/lesson/LessonListView';
+import PublicRoute from './PublicRoute';
+import PrivateRoute from './PrivateRoute';
+import { useSelector } from 'react-redux';
 
 const Router = () => {
+
+  const isAuth = useSelector((state) => (state.auth.isAuth));
+
   return (
     <Switch>
       <AppRoute exact path="/" component={LoginView} layout={SimpleLayout} />
-      <AppRoute exact path="/login" component={LoginView} layout={SimpleLayout} />
       <AppRoute exact path="/register" component={RegisterView} layout={SimpleLayout} />
       <AppRoute exact path="/students" component={StudentsDashboardView} layout={MainLayout} />
       <AppRoute exact path="/teachers" component={TeachersDashboardView} layout={MainLayout} />

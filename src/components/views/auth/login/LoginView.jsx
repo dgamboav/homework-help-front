@@ -14,40 +14,27 @@ import {
     Container
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import { login } from '../../../../actions/auth';
+import { loginWithUsernamePassword } from '../../../../actions/auth';
 
 
 
 const LoginView = (props) => {
-    const history = useHistory();
     const dispatch = useDispatch();
+
+    const history = useHistory();
 
     const { classes } = props;
 
-
-    const [ formValues, handleInputChange ] = useForm({
-        email: 'juanperez@gmail.com',
-        password: '1234'
-    });
+    const [ formValues, handleInputChange ] = useForm();
 
     const { email, password } = formValues;
 
     const handleSubmitLoginForm = (e) => {
         e.preventDefault();
-
-        const data = {
-            id: 1,
-            username: 'profesorperez',
-            email: 'juanperez@gmail.com',
-            roles: ['TEACHER', 'ADMIN']
-        }
         
-        dispatch(login(data));
+        dispatch(loginWithUsernamePassword(email, password));
 
-        console.log("Enviado");
-        console.log(formValues);
-
-        history.push('/students')
+        // history.push('/students')
     }
 
     return (
@@ -84,7 +71,7 @@ const LoginView = (props) => {
                             <TextField  
                                 id="email"
                                 name="email"
-                                type="email"
+                                type="text"
                                 label="E-mail"
                                 fullWidth
                                 onChange={ handleInputChange }
